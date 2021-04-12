@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<metadata>
+  <groupId>com.android.tools</groupId>
+  <artifactId>sdklib</artifactId>
+  <versioning>
+    <release>26.4.0-dev</release>
+    <versions>
+      <version>26.4.0-dev</version>
+    </versions>
+    <lastUpdated>20201106015502</lastUpdated>
+  </versioning>
+</metadata>

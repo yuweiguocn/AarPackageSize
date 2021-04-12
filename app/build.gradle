@@ -1,0 +1,72 @@
+plugins {
+    id 'com.android.application'
+}
+
+android {
+    compileSdkVersion 30
+    buildToolsVersion "30.0.3"
+
+    defaultConfig {
+        applicationId "io.github.yuweiguocn.aarpackagesize"
+        minSdkVersion 21
+        targetSdkVersion 30
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        ndk {//根据你实际情况自行修改  armeabi,armeabi-v7a,arm64-v8a
+            abiFilters 'armeabi-v7a'
+        }
+    }
+
+    signingConfigs {
+        release {
+            storeFile file('yuweiguo.keystore')
+            storePassword rootProject.store_password
+            keyAlias rootProject.key_alias
+            keyPassword rootProject.key_password
+
+            v1SigningEnabled true
+            v2SigningEnabled true
+        }
+    }
+
+    buildTypes {
+        release {
+            signingConfig signingConfigs.release
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+}
+
+dependencies {
+
+    if(rootProject.ext.run){
+        rootProject.ext.aars.each{
+            implementation(it){
+                transitive false
+            }
+        }
+    }
+    //for test
+//    implementation 'com.github.bumptech.glide:glide:4.12.0'
+//    implementation 'com.facebook.fresco:fresco:2.4.0'
+//    // For animated GIF support
+//    implementation 'com.facebook.fresco:animated-gif:2.4.0'
+//
+//    // For WebP support, including animated WebP
+//    implementation 'com.facebook.fresco:animated-webp:2.4.0'
+//    implementation 'com.facebook.fresco:webpsupport:2.4.0'
+
+    implementation 'androidx.appcompat:appcompat:1.2.0'
+    implementation 'com.google.android.material:material:1.3.0'
+    implementation 'androidx.constraintlayout:constraintlayout:2.0.4'
+    testImplementation 'junit:junit:4.+'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.2'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
+}

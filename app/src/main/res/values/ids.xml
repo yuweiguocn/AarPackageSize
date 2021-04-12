@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <id name="temp"/>
+    <array name="temp"/>
+    <anim name="temp"/>
+    <attr name="temp"/>
+    <bool name="temp"/>
+    <color name="temp"/>
+    <declare-styleable name="temp"/>
+    <dimen name="temp"/>
+    <drawable name="temp"/>
+    <font name="temp"/>
+    <layout name="temp"/>
+    <mipmap name="temp"/>
+    <style name="temp"/>
+    <string name="temp"/>
+    <integer name="temp"/>
+</resources>

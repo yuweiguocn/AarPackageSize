@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<metadata>
+  <groupId>com.android.tools.build</groupId>
+  <artifactId>aapt2</artifactId>
+  <versioning>
+    <release>3.4.0-dev-5326820</release>
+    <versions>
+      <version>3.4.0-dev-5326820</version>
+    </versions>
+    <lastUpdated>20210317035039</lastUpdated>
+  </versioning>
+</metadata>
