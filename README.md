@@ -9,7 +9,7 @@
 python AarPackageSize.py
 ```
 
-![](../img/demo.png)
+![](./img/demo.png)
 
 ## 使用
 使用以下命令获取依赖树，在app模块目录下执行如下命令会得到一个名为depends.txt结果文件：
