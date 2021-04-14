@@ -11,10 +11,10 @@ from email.mime.text import MIMEText
 from email.mime.multipart import MIMEMultipart
 from email.header import Header
 
-import platform
-if(platform.system()=="Linux"):
-    reload(sys)
-    sys.setdefaultencoding('utf8')
+# import platform
+# if(platform.system()=="Linux"):
+reload(sys)
+sys.setdefaultencoding('utf8')
 
 class NewNode:
     value = ""
