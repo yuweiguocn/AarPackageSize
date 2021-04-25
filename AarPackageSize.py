@@ -133,6 +133,10 @@ def compile():
     command += "./gradlew assembleRelease -q > outputs/log.txt"
     subprocess.call(command, shell=True)
 
+def compileLog():
+    command = "./gradlew assembleRelease"
+    subprocess.call(command, shell=True)
+
 # 获取文件大小
 def get_FileSize(path):
     fsize = os.path.getsize(path)
@@ -266,7 +270,8 @@ if __name__ == '__main__':
         updateDepend('true',result.childs)    
         compile()
         if(not os.path.exists(apkPath)):
-            break
+            compileLog()
+            raise Exception("打包失败，请解决后重新执行")
         size=str(round(get_FileSize(apkPath)-baseSize,3))
         node={}
         node['name']=result.value
