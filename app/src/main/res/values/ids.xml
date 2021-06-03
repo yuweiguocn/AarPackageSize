@@ -15,4 +15,5 @@
     <style name="temp"/>
     <string name="temp"/>
     <integer name="temp"/>
+    <xml name="temp"/>
 </resources>

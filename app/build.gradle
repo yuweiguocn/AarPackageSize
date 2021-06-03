@@ -42,6 +42,10 @@ android {
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8
     }
+    packagingOptions {
+        pickFirst 'META-INF/core_release.kotlin_module'
+        pickFirst 'lib/*/*.so'
+    }
 }
 
 dependencies {
