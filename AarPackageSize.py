@@ -271,7 +271,8 @@ if __name__ == '__main__':
         compile()
         if(not os.path.exists(apkPath)):
             compileLog()
-            raise Exception("打包失败，请解决后重新执行")
+            if(not os.path.exists(apkPath)):
+                raise Exception("打包失败，请查看原因")
         size=str(round(get_FileSize(apkPath)-baseSize,3))
         node={}
         node['name']=result.value

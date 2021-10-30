@@ -1,0 +1,30 @@
+import groovy.xml.XmlUtil
+
+/**
+ * 处理清单文件，移除queries标签
+ */
+android.applicationVariants.all { variant ->
+        String variantName = variant.name.capitalize()
+        def processManifestTask = project.tasks.getByName("process${variantName}Manifest")
+        processManifestTask.doFirst { pmt ->
+            TaskInputs outputs = processManifestTask.getInputs()
+            Set<File> files = outputs.getFiles().getFiles();
+            for (File file : files) {
+                if(file.toString().endsWith(".xml")){
+                    def manifest = file.getText()
+                    def xml = new XmlParser().parseText(manifest)
+                    def needRewrite = false
+                    xml.queries.forEach { act ->
+                        needRewrite = true
+                        println "release delete queries path=" + file.toString()
+                        act.parent().remove(act)
+                    }
+                    if (needRewrite) {
+                        def serialize = XmlUtil.serialize(xml)
+                        file.write(serialize)
+                    }
+                }
+            }
+        }
+}
+

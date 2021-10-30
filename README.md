@@ -28,6 +28,21 @@ python AarPackageSize.py
 3. 在config.json文件中配置依赖分组
 4. 在order.json文件中配置结果输出顺序
 
+## 快速统计指定aar大小
+1.将aar所在的仓库地址配置在本工程中  
+2.将需要单独统计的aar依赖添加到`aarlist.json`文件中：  
+```json
+[
+  "com.github.bumptech.glide:annotations:4.12.0",
+  "com.github.bumptech.glide:disklrucache:4.12.0",
+  "com.github.bumptech.glide:gifdecoder:4.12.0",
+  "com.github.bumptech.glide:glide:4.12.0"
+]
+```
+3.执行`python3 LocalAarListSize.py`即可：  
+ 
+![](./img/local_aar.png)
+
 ##  License
 ```
 Copyright 2021 yuweiguocn
